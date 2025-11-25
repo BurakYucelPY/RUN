@@ -25,6 +25,11 @@ SENARYO_DB = {
         "kapak_yazisi": "Evde teksin. Odanın köşesindeki porselen bebeğin yeri değişip duruyor. Şimdi sana bakıyor.",
         "ai_odak": "Doğaüstü olaylar, tekinsiz vadi, ürperti, paranormal."
     },
+    "korku_otel": {
+        "baslik": "Otel Odası 303",
+        "kapak_yazisi": "Otele girdin ve kapı arkandan kilitlendi. Duvardaki tablolardaki gözler seni izliyor. Banyodan su sesi geliyor.",
+        "ai_odak": "Paranormal aktivite, sıkışmışlık, geçmişin hayaletleri, tekinsiz ortam."
+    },
 
     # 🚀 KATEGORİ 2: BİLİM KURGU & GELECEK
     "scifi_mars": {
@@ -46,6 +51,16 @@ SENARYO_DB = {
         "baslik": "Uzaylı Deneyi",
         "kapak_yazisi": "Metal bir sedyede uyandın. Etrafında gri, koca kafalı varlıklar ellerinde neşterlerle bekliyor.",
         "ai_odak": "Gizlilik, yabancı teknoloji, kaçış, bilinmezlik."
+    },
+    "scifi_cyber": {
+        "baslik": "Neon Şehri Kaçışı",
+        "kapak_yazisi": "Yıl 2077. Beynindeki çipi çalmak isteyen siber çete peşinde. Neon ışıklı sokaklarda izini kaybettirmelisin.",
+        "ai_odak": "Siber takip, teknolojik silahlar, neon atmosfer, hackleme."
+    },
+    "scifi_cryo": {
+        "baslik": "Kriyojenik Uyanış",
+        "kapak_yazisi": "Yüzyıllar sonra uyandın. Dünya terk edilmiş ve doğa tarafından yutulmuş. Kapsülün enerjisi bitmek üzere.",
+        "ai_odak": "Bilinmezlik, terk edilmiş dünya, kaynak arayışı, adaptasyon."
     },
 
     # ⚔️ KATEGORİ 3: TARİH & MACERA
@@ -69,6 +84,16 @@ SENARYO_DB = {
         "kapak_yazisi": "Köyün yanıyor. Vikingler sahile çıktı. Aileni alıp ormana kaçmalısın.",
         "ai_odak": "Saklanma, doğada hayatta kalma, koruma içgüdüsü."
     },
+    "tarih_piramit": {
+        "baslik": "Firavunun Laneti",
+        "kapak_yazisi": "Piramidin derinliklerinde kayboldun. Meşalen sönmek üzere ve antik tuzaklar devreye girdi.",
+        "ai_odak": "Antik tuzaklar, karanlık, arkeoloji, lanet, bulmaca."
+    },
+    "tarih_savas": {
+        "baslik": "Siper Savaşı 1917",
+        "kapak_yazisi": "Düşman hattının arkasında kaldın. Gaz saldırısı sireni çalıyor. Gaz masken nerede?",
+        "ai_odak": "Savaş atmosferi, gaz tehlikesi, gizlilik, hayatta kalma."
+    },
 
     # 🤪 KATEGORİ 4: ABSÜRT & KOMİK
     "komik_hindi": {
@@ -91,6 +116,16 @@ SENARYO_DB = {
         "kapak_yazisi": "Sen bir kedisin. Sahibin seni veterinere götürmek için taşıma kutusunu çıkardı. KAÇ!",
         "ai_odak": "Tırmalama, çeviklik, miyavlama, insanları manipüle etme."
     },
+    "komik_dugun": {
+        "baslik": "Yanlış Düğün",
+        "kapak_yazisi": "Eski sevgilinin düğününü basmaya geldin. 'İtirazı olan var mı?' dendiğinde içeri daldın ama yanlış düğün!",
+        "ai_odak": "Sosyal kaos, yanlış anlaşılma, ikna çabası, rezillik."
+    },
+    "komik_bebek": {
+        "baslik": "Dahi Bebek Bakıcısı",
+        "kapak_yazisi": "Baktığın bebek aslında dünyayı ele geçirmeye çalışan bir dahi. Bezini değiştirirken planlarını bozmalısın.",
+        "ai_odak": "Absürt zeka, bebekle mücadele, komik diyaloglar, sakarlık."
+    },
 
     # 🔥 KATEGORİ 5: HARDCORE
     "hard_kor": {
@@ -107,6 +142,53 @@ SENARYO_DB = {
         "baslik": "Paraşütsüz Düşüş",
         "kapak_yazisi": "Uçaktan düştün. Paraşütün açılmadı. Yere çakılmana 60 saniye var. Bir mucize yarat.",
         "ai_odak": "Havada manevra, aşırı hız, fizik kuralları, imkansız kurtuluş."
+    },
+    "hard_okyanus": {
+        "baslik": "Okyanusun Ortası",
+        "kapak_yazisi": "Küçük bir saldasın. Etrafın köpekbalıklarıyla çevrili. Suyun yok. Güneş tepede yakıyor.",
+        "ai_odak": "Susuzluk, güneş çarpması, yırtıcı hayvanlar, psikolojik çöküş."
+    },
+    "hard_magara": {
+        "baslik": "Su Dolu Mağara",
+        "kapak_yazisi": "Dalış yaparken kayaların arasına sıkıştın. Oksijen tüpün bitiyor. Işığın söndü.",
+        "ai_odak": "Boğulma korkusu, karanlık, yön duygusu, panik yönetimi."
+    },
+    "hard_cig": {
+        "baslik": "Çığ Altında",
+        "kapak_yazisi": "Dağcılık yaparken çığ düştü. Tonlarca karın altındasın. Hipotermi başlıyor. Hangi yön yukarı?",
+        "ai_odak": "Soğuk, nefes kontrolü, yön bulma, hipotermi, kısıtlı hareket."
+    },
+
+    # 🔮 KATEGORİ 6: FANTASTİK & MİTOLOJİ
+    "fantastik_ejderha": {
+        "baslik": "Ejderha Hazinesi",
+        "kapak_yazisi": "Devasa bir ejderhanın inindesin. Altınların üzerinde uyuyor. O özel mücevheri alıp uyanmadan kaçmalısın.",
+        "ai_odak": "Gizlilik, büyü, ejderha öfkesi, hazine hırsı."
+    },
+    "fantastik_labirent": {
+        "baslik": "Minotaur'un Labirenti",
+        "kapak_yazisi": "Sonsuz bir labirente atıldın. Uzaktan canavarın kükremesi geliyor. İpi takip et ve çıkışı bul.",
+        "ai_odak": "Yön bulma, mitolojik canavar, tuzaklar, antik gizem."
+    },
+    "fantastik_buyu": {
+        "baslik": "Büyücü Kulesi",
+        "kapak_yazisi": "Kötü büyücü seni bir kurbağaya çevirdi. İksir odasına ulaşıp tekrar insana dönmelisin.",
+        "ai_odak": "Büyü kullanımı, hayvan formu, bulmaca çözme, zamanla yarış."
+    },
+    "fantastik_vampir": {
+        "baslik": "Vampir Şatosu",
+        "kapak_yazisi": "Kont Drakula'nın şatosunda esirsin. Güneş batmak üzere. Vampirler uyanmadan kaçman lazım.",
+        "ai_odak": "Gotik korku, kan, güneş ışığı, kaçış planı."
+    },
+    "fantastik_kurt": {
+        "baslik": "Dolunay Gecesi",
+        "kapak_yazisi": "Ormanda kamp yapıyorsun. Dolunay çıktı ve en yakın arkadaşın garip davranmaya başladı. Dönüşüyor!",
+        "ai_odak": "Hayatta kalma, gümüş, dönüşüm, kovalamaca, dostluk ikilemi."
+    },
+    "fantastik_gemi": {
+        "baslik": "Hayalet Korsan Gemisi",
+        "kapak_yazisi": "Lanetli bir gemide uyandın. Mürettebat iskeletlerden oluşuyor. Ruhunu almadan sandala ulaş.",
+        "ai_odak": "Denizcilik, hayaletler, lanet, kılıç dövüşü."
     }
 }
 
