@@ -4,70 +4,77 @@ import data
 import ai_service
 from models import OyunIstegi
 
-async def test_baslat():
-    print("\n========================================")
-    print("      RUN OYUNU - KONSOL TESTİ")
-    print("========================================\n")
+# Konsol renkleri
+YESIL = "\033[92m"
+KIRMIZI = "\033[91m"
+SARI = "\033[93m"
+MAVI = "\033[94m"
+RESET = "\033[0m"
 
-    # 1. Listeyi Göster
+async def test_baslat():
+    print(f"\n{MAVI}========================================{RESET}")
+    print(f"{MAVI}      RUN OYUNU - KONSOL TESTİ (v4){RESET}")
+    print(f"{MAVI}========================================{RESET}\n")
+
+    # 1. Listele
     scenarios = data.get_all_scenarios()
-    print("Mevcut Senaryolar:")
     for k, v in scenarios.items():
         print(f" - [{k}]: {v['baslik']}")
     
-    print("-" * 30)
-
-    # 2. Seçim Yap
-    secilen_id = input("\nOynamak istediğin senaryonun KODUNU yaz (örn: komik_hindi): ").strip()
-
+    # 2. Seç
+    secilen_id = input(f"\n{YESIL}KODU YAZ: {RESET}").strip()
     if secilen_id not in scenarios:
-        print("❌ HATA: Böyle bir senaryo kodu yok!")
+        print("❌ Hata: Kod yok.")
         return
 
-    # 3. Bilgileri Gir
-    print(f"\nSeçilen: {scenarios[secilen_id]['baslik']}")
-    isim = input("Adın ne?: ")
-    esya = input("Yanındaki Eşya?: ")
-    korku = input("En Büyük Korkun?: ")
+    # 3. Bilgiler
+    isim = input("Adın: ")
+    esya = input("Eşyan: ")
+    korku = input("Korkun (Örn: Hayalet): ")
 
-    istek_paketi = OyunIstegi(
+    istek = OyunIstegi(
         scenario_id=secilen_id,
         oyuncu_adi=isim,
         esya=esya,
         korku=korku
     )
 
-    # 4. AI Çalışsın
     try:
-        # Mimar
-        iskelet = await ai_service.planla_mimar(scenarios[secilen_id], istek_paketi)
-        if not iskelet:
-            return
+        # AŞAMA 1: Analist
+        analiz = await ai_service.analist_calistir(scenarios[secilen_id], istek)
         
-        print("✅ Mimar rotayı çizdi.")
+        print(f"\n{SARI}🧠 ANALİST RAPORU:{RESET}")
+        # BURASI DÜZELTİLDİ: Yeni anahtarları kullanıyoruz
+        print(f"Hikaye Konsepti: {analiz.get('hikaye_konsepti', 'Veri Yok')}")
+        print(f"Tehdit Görünüşü: {analiz.get('korku_gorunusu', 'Veri Yok')}")
+        print(f"Oyuncu Rolü:     {analiz.get('oyuncu_rolu', 'Veri Yok')}")
+        
+        # AŞAMA 2: Mimar
+        iskelet = await ai_service.planla_mimar(analiz, scenarios[secilen_id], istek)
+        if not iskelet: return
+        print(f"\n{SARI}✅ Mimar planı çizdi.{RESET}")
 
-        # Yazar
-        oyun_verisi = await ai_service.yaz_senarist(iskelet, scenarios[secilen_id], istek_paketi)
-        
-        if not oyun_verisi:
-            return
+        # AŞAMA 3: Senarist
+        oyun = await ai_service.yaz_senarist(iskelet, analiz, scenarios[secilen_id], istek)
+        if not oyun: return
 
-        print("\n🎉 OYUN OLUŞTURULDU! İşte ilk sahne:\n")
-        
-        # Sadece ilk sahneyi basalım ki kalabalık olmasın
-        ilk_sahne = oyun_verisi["sahneler"][0]
-        print(f"MEKAN: {ilk_sahne['mekan_betimlemesi']}")
-        print("\nSEÇENEKLER:")
-        for opt in ilk_sahne['secenekler']:
+        print(f"\n{YESIL}🎉 OYUN OLUŞTU! İLK SAHNE KONTROLÜ:{RESET}")
+        ilk = oyun["sahneler"][0]
+        print(f"Mekan: {ilk['mekan_betimlemesi'][:100]}...")
+        print("\nSeçenekler:")
+        for opt in ilk['secenekler']:
             print(f"- [{opt['id']}] {opt['metin']} (Sonuç: {opt['sonuc']})")
-        
-        # İstersen tamamını kaydet
+            
+        # Kaydet
         with open("test_sonuc.json", "w", encoding="utf-8") as f:
-            json.dump(oyun_verisi, f, ensure_ascii=False, indent=4)
-        print("\n💾 Tüm oyun verisi 'test_sonuc.json' dosyasına kaydedildi.")
+            json.dump(oyun, f, ensure_ascii=False, indent=4)
+        print("\n💾 Detaylar 'test_sonuc.json' dosyasına kaydedildi.")
 
     except Exception as e:
-        print(f"HATA: {e}")
+        print(f"{KIRMIZI}HATA: {e}{RESET}")
+        # Hata detayını görmek için bunu açabilirsin:
+        import traceback
+        traceback.print_exc()
 
 if __name__ == "__main__":
     asyncio.run(test_baslat())
