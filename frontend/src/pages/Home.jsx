@@ -6,7 +6,7 @@ const Home = () => {
 
   return (
     <div style={{ width: '100vw', height: '100vh', position: 'relative', overflow: 'hidden', backgroundColor: '#000' }}>
-      <GhostCursor />
+      <GhostCursor color="#ff0000" />
       <div style={{ position: 'relative', zIndex: 20, color: '#050505', textAlign: 'center', paddingTop: '20%' }}>
         <button 
           onMouseEnter={() => setIsHovered(true)}
