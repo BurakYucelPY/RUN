@@ -9,40 +9,46 @@ const MOBILE_BREAKPOINT = 768;
 
 const cardData = [
   {
-    color: '#060010',
-    title: 'Analytics',
-    description: 'Track user behavior',
-    label: 'Insights'
+    id: 'scifi',
+    title: 'Bilim Kurgu',
+    description: 'Geleceğin teknolojisi ve uzay',
+    label: 'Sci-Fi',
+    image: '/assets/categories/scifi.jpg'
   },
   {
-    color: '#060010',
-    title: 'Dashboard',
-    description: 'Centralized data view',
-    label: 'Overview'
+    id: 'komik',
+    title: 'Absürt & Komik',
+    description: 'Gülmekten kaçamayacaksın',
+    label: 'Komedi',
+    image: '/assets/categories/komik.jpg'
   },
   {
-    color: '#060010',
-    title: 'Collaboration',
-    description: 'Work together seamlessly',
-    label: 'Teamwork'
+    id: 'korku',
+    title: 'Korku & Gerilim',
+    description: 'Karanlıkta yalnız değilsin',
+    label: 'Korku',
+    image: '/assets/categories/korku.jpg'
   },
   {
-    color: '#060010',
-    title: 'Automation',
-    description: 'Streamline workflows',
-    label: 'Efficiency'
+    id: 'tarih',
+    title: 'Tarih & Macera',
+    description: 'Geçmişin tozlu sayfaları',
+    label: 'Tarih',
+    image: '/assets/categories/tarih.jpg'
   },
   {
-    color: '#060010',
-    title: 'Integration',
-    description: 'Connect favorite tools',
-    label: 'Connectivity'
+    id: 'hard',
+    title: 'Hardcore',
+    description: 'Zorlu hayatta kalma',
+    label: 'Zor',
+    image: '/assets/categories/hard.jpg'
   },
   {
-    color: '#060010',
-    title: 'Security',
-    description: 'Enterprise-grade protection',
-    label: 'Protection'
+    id: 'fantastik',
+    title: 'Fantastik',
+    description: 'Büyülü dünyalar',
+    label: 'Büyü',
+    image: '/assets/categories/fantastik.jpg'
   }
 ];
 
@@ -506,7 +512,10 @@ const MagicBento = ({
             className: baseClassName,
             style: {
               backgroundColor: card.color,
-              '--glow-color': glowColor
+              '--glow-color': glowColor,
+              backgroundImage: `url(${card.image})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
             }
           };
 
@@ -522,10 +531,11 @@ const MagicBento = ({
                 clickEffect={clickEffect}
                 enableMagnetism={enableMagnetism}
               >
-                <div className="magic-bento-card__header">
+                <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.7)', zIndex: 0 }} />
+                <div className="magic-bento-card__header" style={{ position: 'relative', zIndex: 1 }}>
                   <div className="magic-bento-card__label">{card.label}</div>
                 </div>
-                <div className="magic-bento-card__content">
+                <div className="magic-bento-card__content" style={{ position: 'relative', zIndex: 1 }}>
                   <h2 className="magic-bento-card__title">{card.title}</h2>
                   <p className="magic-bento-card__description">{card.description}</p>
                 </div>
