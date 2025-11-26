@@ -531,7 +531,7 @@ const MagicBento = ({
                 clickEffect={clickEffect}
                 enableMagnetism={enableMagnetism}
               >
-                <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.7)', zIndex: 0 }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.5)', zIndex: 0 }} />
                 <div className="magic-bento-card__header" style={{ position: 'relative', zIndex: 1 }}>
                   <div className="magic-bento-card__label">{card.label}</div>
                 </div>
