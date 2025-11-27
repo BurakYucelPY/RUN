@@ -317,6 +317,8 @@ const ParticleCard = ({
       ref={cardRef}
       className={`${className} particle-container`}
       style={{ ...style, position: 'relative', overflow: 'hidden' }}
+      role="button"
+      tabIndex={0}
     >
       {children}
     </div>
@@ -547,6 +549,8 @@ const MagicBento = ({
             <div
               key={index}
               {...cardProps}
+              role="button"
+              tabIndex={0}
               ref={el => {
                 if (!el) return;
 
