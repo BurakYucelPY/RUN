@@ -1,5 +1,7 @@
 import { useRef, useEffect, useCallback, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
+import { ROUTES } from '../navigation/routes';
 import './MagicBento.css';
 
 const DEFAULT_PARTICLE_COUNT = 12;
@@ -34,7 +36,8 @@ const cardData = [
     title: 'Tarih & Macera',
     description: 'Geçmişin tozlu sayfaları',
     label: 'Tarih',
-    image: '/assets/categories/tarih.jpg'
+    image: '/assets/categories/tarih.jpg',
+    path: ROUTES.SCENARIO_HISTORY
   },
   {
     id: 'hard',
@@ -95,7 +98,8 @@ const ParticleCard = ({
   glowColor = DEFAULT_GLOW_COLOR,
   enableTilt = true,
   clickEffect = false,
-  enableMagnetism = false
+  enableMagnetism = false,
+  onClick
 }) => {
   const cardRef = useRef(null);
   const particlesRef = useRef([]);
@@ -319,6 +323,7 @@ const ParticleCard = ({
       style={{ ...style, position: 'relative', overflow: 'hidden' }}
       role="button"
       tabIndex={0}
+      onClick={onClick}
     >
       {children}
     </div>
@@ -494,6 +499,13 @@ const MagicBento = ({
   const gridRef = useRef(null);
   const isMobile = useMobileDetection();
   const shouldDisableAnimations = disableAnimations || isMobile;
+  const navigate = useNavigate();
+
+  const handleCardClick = (path) => {
+    if (path) {
+      navigate(path);
+    }
+  };
 
   return (
     <>
@@ -532,6 +544,7 @@ const MagicBento = ({
                 enableTilt={enableTilt}
                 clickEffect={clickEffect}
                 enableMagnetism={enableMagnetism}
+                onClick={() => handleCardClick(card.path)}
               >
                 <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.5)', zIndex: 0 }} />
                 <div className="magic-bento-card__header" style={{ position: 'relative', zIndex: 1 }}>
@@ -551,6 +564,7 @@ const MagicBento = ({
               {...cardProps}
               role="button"
               tabIndex={0}
+              onClick={() => handleCardClick(card.path)}
               ref={el => {
                 if (!el) return;
 
