@@ -15,21 +15,24 @@ const cardData = [
     title: 'Bilim Kurgu',
     description: 'Geleceğin teknolojisi ve uzay',
     label: 'Sci-Fi',
-    image: '/assets/categories/scifi.jpg'
+    image: '/assets/categories/scifi.jpg',
+    path: ROUTES.SCENARIO_SCIFI
   },
   {
     id: 'komik',
     title: 'Absürt & Komik',
     description: 'Gülmekten kaçamayacaksın',
     label: 'Komedi',
-    image: '/assets/categories/komik.jpg'
+    image: '/assets/categories/komik.jpg',
+    path: ROUTES.SCENARIO_COMEDY
   },
   {
     id: 'korku',
     title: 'Korku & Gerilim',
     description: 'Karanlıkta yalnız değilsin',
     label: 'Korku',
-    image: '/assets/categories/korku.jpg'
+    image: '/assets/categories/korku.jpg',
+    path: ROUTES.SCENARIO_HORROR
   },
   {
     id: 'tarih',
@@ -44,14 +47,16 @@ const cardData = [
     title: 'Hardcore',
     description: 'Zorlu hayatta kalma',
     label: 'Zor',
-    image: '/assets/categories/hard.jpg'
+    image: '/assets/categories/hard.jpg',
+    path: ROUTES.SCENARIO_HARDCORE
   },
   {
     id: 'fantastik',
     title: 'Fantastik',
     description: 'Büyülü dünyalar',
     label: 'Büyü',
-    image: '/assets/categories/fantastik.jpg'
+    image: '/assets/categories/fantastik.jpg',
+    path: ROUTES.SCENARIO_FANTASY
   }
 ];
 
