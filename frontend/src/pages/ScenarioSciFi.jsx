@@ -7,7 +7,7 @@ const ScenarioSciFi = () => {
       <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
         <LightRays
           raysOrigin="top-center"
-          raysColor="#ff0000"
+          raysColor="#8B0000"
           raysSpeed={1.5}
           lightSpread={0.8}
           rayLength={1.2}
