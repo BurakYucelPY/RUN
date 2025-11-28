@@ -913,6 +913,13 @@ export default function InfiniteMenu({ items = [] }) {
   const canvasRef = useRef(null);
   const [activeItem, setActiveItem] = useState(null);
   const [isMoving, setIsMoving] = useState(false);
+  const [showTutorial, setShowTutorial] = useState(true);
+
+  useEffect(() => {
+    if (isMoving) {
+      setShowTutorial(false);
+    }
+  }, [isMoving]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -963,6 +970,13 @@ export default function InfiniteMenu({ items = [] }) {
           </div>
         </>
       )}
+
+      <div className={`tutorial-overlay ${showTutorial ? 'visible' : 'hidden'}`}>
+        <div className="tutorial-content">
+          <div className="tutorial-icon">↔</div>
+          <div className="tutorial-text">KEŞFETMEK İÇİN SÜRÜKLE</div>
+        </div>
+      </div>
     </div>
   );
 }

@@ -132,3 +132,67 @@
     display: none;
   }
 }
+
+/* Tutorial Overlay */
+.tutorial-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* Allow clicks to pass through to the canvas */
+  z-index: 20;
+  transition: opacity 1s ease-out;
+}
+
+.tutorial-overlay.visible {
+  opacity: 1;
+}
+
+.tutorial-overlay.hidden {
+  opacity: 0;
+}
+
+.tutorial-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.7);
+  animation: pulse-ghost 3s infinite;
+}
+
+.tutorial-icon {
+  font-size: 4rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.tutorial-text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2rem;
+  letter-spacing: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+@keyframes pulse-ghost {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.95);
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(0.95);
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+  }
+}
