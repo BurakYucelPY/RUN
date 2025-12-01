@@ -914,6 +914,7 @@ export default function InfiniteMenu({ items = [] }) {
   const [activeItem, setActiveItem] = useState(null);
   const [isMoving, setIsMoving] = useState(false);
   const [showTutorial, setShowTutorial] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     if (isMoving) {
@@ -951,8 +952,16 @@ export default function InfiniteMenu({ items = [] }) {
   }, [items]);
 
   const handleButtonClick = () => {
-    // User requested an empty button for now
-    console.log('Game start clicked for:', activeItem?.title);
+    setShowModal(true);
+  };
+
+  const handleStartGame = () => {
+    console.log('Starting game for:', activeItem?.title);
+    setShowModal(false);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
   };
 
   return (
@@ -977,6 +986,30 @@ export default function InfiniteMenu({ items = [] }) {
           <div className="tutorial-text">KEŞFETMEK İÇİN SÜRÜKLE</div>
         </div>
       </div>
+
+      {showModal && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h3 className="modal-title">Hazır mısın?</h3>
+            <div className="input-group">
+              <label>İSİM</label>
+              <input type="text" placeholder="..." />
+            </div>
+            <div className="input-group">
+              <label>YANINA ALACAĞIN EŞYA</label>
+              <input type="text" placeholder="..." />
+            </div>
+            <div className="input-group">
+              <label>EN BÜYÜK KORKUN</label>
+              <input type="text" placeholder="..." />
+            </div>
+            <div className="modal-actions">
+              <button className="modal-start-button" onClick={handleStartGame}>HİKAYENİ OLUŞTUR</button>
+              <button className="modal-close-button" onClick={handleCloseModal}>X</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
