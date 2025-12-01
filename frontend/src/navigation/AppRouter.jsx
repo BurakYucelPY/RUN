@@ -9,6 +9,7 @@ import ScenarioComedy from '../pages/ScenarioComedy';
 import ScenarioHorror from '../pages/ScenarioHorror';
 import ScenarioHardcore from '../pages/ScenarioHardcore';
 import ScenarioFantasy from '../pages/ScenarioFantasy';
+import Story from '../pages/Story';
 
 const AppRouter = () => {
   return (
@@ -22,6 +23,7 @@ const AppRouter = () => {
         <Route path={ROUTES.SCENARIO_HORROR} element={<ScenarioHorror />} />
         <Route path={ROUTES.SCENARIO_HARDCORE} element={<ScenarioHardcore />} />
         <Route path={ROUTES.SCENARIO_FANTASY} element={<ScenarioFantasy />} />
+        <Route path={ROUTES.STORY} element={<Story />} />
       </Routes>
     </BrowserRouter>
   );

@@ -7,4 +7,5 @@ export const ROUTES = {
   SCENARIO_HORROR: '/scenario-horror',
   SCENARIO_HARDCORE: '/scenario-hardcore',
   SCENARIO_FANTASY: '/scenario-fantasy',
+  STORY: '/story',
 };
