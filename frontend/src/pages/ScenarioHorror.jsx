@@ -4,36 +4,42 @@ import InfiniteMenu from '../components/InfiniteMenu';
 
 const items = [
   {
+    id: 'korku_diri',
     image: '/assets/categoriesHorror/DiriDiriGomulen.png',
     link: 'https://google.com/',
     title: 'Diri Diri Gömülen',
     description: 'Gözlerini açtığında zifiri karanlık seni karşılıyor. Ciğerlerine dolan ağır toprak kokusu ve daracık bir alanda sıkışmış olmanın verdiği dehşet... Hareket edemiyorsun, üzerindeki tahta kapağın ağırlığını hissediyorsun. Tonlarca toprağın altındasın ve oksijenin her saniye azalıyor.'
   },
   {
+    id: 'korku_akil',
     image: '/assets/categoriesHorror/AkılHastanesiBlokC.png',
     link: 'https://google.com/',
     title: 'Akıl Hastanesi: Blok C',
     description: 'Yıllar önce kapatılmış, çürümeye yüz tutmuş bir akıl hastanesinin soğuk koridorlarındasın. Duvarlardaki dökülen boyalar ve paslı tekerlekli sandalyeler geçmişin acılarını haykırıyor. Ama burası tamamen boş değil; koridorun sonundan gelen ağır, sürüklenen ayak sesleri sana doğru yaklaşıyor.'
   },
   {
+    id: 'korku_metro',
     image: '/assets/categoriesHorror/GeceYarisiMetro.png',
     link: 'https://google.com/',
     title: 'Gece Yarısı Metro',
     description: 'Gecenin en karanlık saatinde, son metro seferindesin. Tünelin tam ortasında aniden ışıklar kesildi ve motorlar sustu. Acil durum ışıklarının titrek aydınlığında, vagonun diğer ucunda insan olmayan bir silüetin sana doğru baktığını fark ediyorsun.'
   },
   {
+    id: 'korku_bodrum',
     image: '/assets/categoriesHorror/SeriKatilinBodrumu.png',
     link: 'https://google.com/',
     title: 'Seri Katilin Bodrumu',
     description: 'Soğuk ve nemli bir bodrum katında, ellerin ve ayakların sandalyeye sıkıca bağlanmış halde uyanıyorsun. Duvarda paslı testereler ve garip aletler asılı. Üst kattan gelen ağır adım sesleri ve bıçak bileme gürültüsü, katilin işini bitirmek için aşağı inmek üzere olduğunu haber veriyor.'
   },
   {
+    id: 'korku_bebek',
     image: '/assets/categoriesHorror/LanetliBebek.png',
     link: 'https://google.com/',
     title: 'Lanetli Bebek',
     description: 'Fırtınalı bir gecede evde tek başınasın. Odanın köşesindeki antika porselen bebeğin yeri, sen her arkamı döndüğünde değişiyor. Şimdi ise cam gibi parlayan gözleriyle doğrudan sana bakıyor ve yüzünde daha önce olmayan, tüyler ürpertici bir gülümseme var.'
   },
   {
+    id: 'korku_otel',
     image: '/assets/categoriesHorror/OtelOdasi303.png',
     link: 'https://google.com/',
     title: 'Otel Odası 303',

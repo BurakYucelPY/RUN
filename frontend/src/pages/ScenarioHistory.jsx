@@ -4,36 +4,42 @@ import InfiniteMenu from '../components/InfiniteMenu';
 
 const items = [
   {
+    id: 'tarih_titanik',
     image: '/assets/categoriesHistory/BatanGemiTitanik.png',
     link: 'https://google.com/',
     title: 'Batan Gemi: Titanik',
     description: 'Devasa gemi Titanik, buzdağına çarptıktan sonra hızla sulara gömülüyor. Sen alt kattaki kamaradasın ve buz gibi okyanus suyu kapının altından içeri dolmaya başladı. Kapı sıkışmış durumda ve koridorlardaki panik dolu çığlıklar, zamanın daraldığını haykırıyor.'
   },
   {
+    id: 'tarih_piramit',
     image: '/assets/categoriesHistory/FiravununLaneti.png',
     link: 'https://google.com/',
     title: 'Firavunun Laneti',
     description: 'Büyük Piramit\'in keşfedilmemiş derinliklerinde yolunu kaybettin. Elindeki meşale son nefesini verirken, antik tuzakların mekanik sesleri yankılanmaya başladı. Firavunun laneti uyanıyor ve bu labirentten çıkmak için antik bulmacaları çözmek zorundasın.'
   },
   {
+    id: 'tarih_gladyator',
     image: '/assets/categoriesHistory/GladyatorArenasi.png',
     link: 'https://google.com/',
     title: 'Gladyatör Arenası',
     description: 'Roma Kolezyumu\'nun kumlu zeminindesin, binlerce seyirci kan istiyor. İmparator locasından sana bakarken, karşındaki demir kapı gürültüyle açılıyor. Karanlığın içinden günlerdir aç bırakılmış devasa bir aslan çıkıyor ve elinde seni koruyacak hiçbir silah yok.'
   },
   {
+    id: 'tarih_savas',
     image: '/assets/categoriesHistory/SiperSavaşi1917.png',
     link: 'https://google.com/',
     title: 'Siper Savaşı 1917',
     description: '1917, Batı Cephesi. Düşman hattının arkasında mahsur kaldın ve gökyüzünü sarı bir duman kaplamaya başladı. Gaz saldırısı sireni acı acı çalıyor, ciğerlerini yakacak bu ölümcül buluttan korunmak için gaz maskeni bulman gerek, ama nerede?'
   },
   {
+    id: 'tarih_kovboy',
     image: '/assets/categoriesHistory/VahsiBatiSoygunu.png',
     link: 'https://google.com/',
     title: 'Vahşi Batı Soygunu',
     description: 'Vahşi Batı\'nın tozlu kasabasında planladığınız banka soygunu ters gitti. Şerif ve adamları binayı dört bir yandan kuşattı, mermiler camları parçalayarak içeri yağıyor. Cephanen bitmek üzere ve buradan sağ çıkmak için kurnazca bir plana ihtiyacın var.'
   },
   {
+    id: 'tarih_viking',
     image: '/assets/categoriesHistory/VikingBaskini.png',
     link: 'https://google.com/',
     title: 'Viking Baskını',
