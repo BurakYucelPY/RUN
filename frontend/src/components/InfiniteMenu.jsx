@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { mat4, quat, vec2, vec3 } from 'gl-matrix';
+import { ROUTES } from '../navigation/routes';
 import './InfiniteMenu.css';
 
 const discVertShaderSource = `#version 300 es
@@ -911,10 +913,17 @@ const defaultItems = [
 
 export default function InfiniteMenu({ items = [] }) {
   const canvasRef = useRef(null);
+  const navigate = useNavigate();
   const [activeItem, setActiveItem] = useState(null);
   const [isMoving, setIsMoving] = useState(false);
   const [showTutorial, setShowTutorial] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  
+  // Form states
+  const [name, setName] = useState('');
+  const [item, setItem] = useState('');
+  const [fear, setFear] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (isMoving) {
@@ -955,9 +964,43 @@ export default function InfiniteMenu({ items = [] }) {
     setShowModal(true);
   };
 
-  const handleStartGame = () => {
-    console.log('Starting game for:', activeItem?.title);
-    setShowModal(false);
+  const handleStartGame = async () => {
+    if (!activeItem?.id) {
+      console.error('No scenario ID found');
+      return;
+    }
+
+    setIsLoading(true);
+    
+    const payload = {
+      scenario_id: activeItem.id,
+      oyuncu_adi: name || 'İsimsiz Kahraman',
+      esya: item || 'Hiçbir şey',
+      korku: fear || 'Bilinmiyor'
+    };
+
+    try {
+      const response = await fetch('http://localhost:8000/oyun-baslat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      setShowModal(false);
+      navigate(ROUTES.STORY, { state: { story: data } });
+    } catch (error) {
+      console.error('Error starting game:', error);
+      alert('Oyuna başlarken bir hata oluştu. Lütfen tekrar deneyin.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleCloseModal = () => {
@@ -993,18 +1036,39 @@ export default function InfiniteMenu({ items = [] }) {
             <h3 className="modal-title">Hazır mısın?</h3>
             <div className="input-group">
               <label>İSİM</label>
-              <input type="text" placeholder="..." />
+              <input 
+                type="text" 
+                placeholder="..." 
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
             </div>
             <div className="input-group">
               <label>YANINA ALACAĞIN EŞYA</label>
-              <input type="text" placeholder="..." />
+              <input 
+                type="text" 
+                placeholder="..." 
+                value={item}
+                onChange={(e) => setItem(e.target.value)}
+              />
             </div>
             <div className="input-group">
               <label>EN BÜYÜK KORKUN</label>
-              <input type="text" placeholder="..." />
+              <input 
+                type="text" 
+                placeholder="..." 
+                value={fear}
+                onChange={(e) => setFear(e.target.value)}
+              />
             </div>
             <div className="modal-actions">
-              <button className="modal-start-button" onClick={handleStartGame}>HİKAYENİ OLUŞTUR</button>
+              <button 
+                className="modal-start-button" 
+                onClick={handleStartGame}
+                disabled={isLoading}
+              >
+                {isLoading ? 'YÜKLENİYOR...' : 'HİKAYENİ OLUŞTUR'}
+              </button>
               <button className="modal-close-button" onClick={handleCloseModal}>X</button>
             </div>
           </div>
