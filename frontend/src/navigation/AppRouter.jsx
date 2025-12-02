@@ -9,7 +9,7 @@ import ScenarioComedy from '../pages/ScenarioComedy';
 import ScenarioHorror from '../pages/ScenarioHorror';
 import ScenarioHardcore from '../pages/ScenarioHardcore';
 import ScenarioFantasy from '../pages/ScenarioFantasy';
-import Story from '../pages/Story';
+import Story from '../pages/Story/Story';
 
 const AppRouter = () => {
   return (
