@@ -3,51 +3,52 @@ import { useNavigate } from 'react-router-dom';
 import GhostCursor from '../components/GhostCursor';
 import Loader from '../components/Loader';
 import { ROUTES } from '../navigation/routes';
+import { getAssetPath } from '../utils/assets';
 
 const imagesToPreload = [
   // Main Categories
-  '/assets/categories/scifi.jpg',
-  '/assets/categories/komik.jpg',
-  '/assets/categories/korku.jpg',
-  '/assets/categories/tarih.jpg',
-  '/assets/categories/hard.jpg',
-  '/assets/categories/fantastik.jpg',
+  getAssetPath('/assets/categories/scifi.jpg'),
+  getAssetPath('/assets/categories/komik.jpg'),
+  getAssetPath('/assets/categories/korku.jpg'),
+  getAssetPath('/assets/categories/tarih.jpg'),
+  getAssetPath('/assets/categories/hard.jpg'),
+  getAssetPath('/assets/categories/fantastik.jpg'),
 
   // Comedy
-  '/assets/categoriesComedy/DahiBebekBakicisi.png',
-  '/assets/categoriesComedy/KediSimulatoru.png',
-  '/assets/categoriesComedy/SinavdaKopya.png',
-  '/assets/categoriesComedy/TuvaletteKağitBitti.png',
-  '/assets/categoriesComedy/YanlisDugun.png',
-  '/assets/categoriesComedy/YilbasiHindisi.png',
+  getAssetPath('/assets/categoriesComedy/DahiBebekBakicisi.png'),
+  getAssetPath('/assets/categoriesComedy/KediSimulatoru.png'),
+  getAssetPath('/assets/categoriesComedy/SinavdaKopya.png'),
+  getAssetPath('/assets/categoriesComedy/TuvaletteKağitBitti.png'),
+  getAssetPath('/assets/categoriesComedy/YanlisDugun.png'),
+  getAssetPath('/assets/categoriesComedy/YilbasiHindisi.png'),
 
   // Horror
-  '/assets/categoriesHorror/AkılHastanesiBlokC.png',
-  '/assets/categoriesHorror/DiriDiriGomulen.png',
-  '/assets/categoriesHorror/GeceYarisiMetro.png',
-  '/assets/categoriesHorror/LanetliBebek.png',
-  '/assets/categoriesHorror/OtelOdasi303.png',
-  '/assets/categoriesHorror/SeriKatilinBodrumu.png',
+  getAssetPath('/assets/categoriesHorror/AkılHastanesiBlokC.png'),
+  getAssetPath('/assets/categoriesHorror/DiriDiriGomulen.png'),
+  getAssetPath('/assets/categoriesHorror/GeceYarisiMetro.png'),
+  getAssetPath('/assets/categoriesHorror/LanetliBebek.png'),
+  getAssetPath('/assets/categoriesHorror/OtelOdasi303.png'),
+  getAssetPath('/assets/categoriesHorror/SeriKatilinBodrumu.png'),
 
   // SciFi
-  '/assets/categoriesSciFi/KriyojenikUyanış.png',
-  '/assets/categoriesSciFi/MarstaTekBaşına.png',
-  '/assets/categoriesSciFi/NeonŞehriKaçışı.png',
-  '/assets/categoriesSciFi/UzaylıDeneyi.png',
-  '/assets/categoriesSciFi/ZamanDongusu.png',
-  '/assets/categoriesSciFi/İsyankarYapayZeka.png',
+  getAssetPath('/assets/categoriesSciFi/KriyojenikUyanış.png'),
+  getAssetPath('/assets/categoriesSciFi/MarstaTekBaşına.png'),
+  getAssetPath('/assets/categoriesSciFi/NeonŞehriKaçışı.png'),
+  getAssetPath('/assets/categoriesSciFi/UzaylıDeneyi.png'),
+  getAssetPath('/assets/categoriesSciFi/ZamanDongusu.png'),
+  getAssetPath('/assets/categoriesSciFi/İsyankarYapayZeka.png'),
 
   // History
-  '/assets/categoriesHistory/BatanGemiTitanik.png',
-  '/assets/categoriesHistory/FiravununLaneti.png',
-  '/assets/categoriesHistory/GladyatorArenasi.png',
-  '/assets/categoriesHistory/SiperSavaşi1917.png',
-  '/assets/categoriesHistory/VahsiBatiSoygunu.png',
-  '/assets/categoriesHistory/VikingBaskini.png',
+  getAssetPath('/assets/categoriesHistory/BatanGemiTitanik.png'),
+  getAssetPath('/assets/categoriesHistory/FiravununLaneti.png'),
+  getAssetPath('/assets/categoriesHistory/GladyatorArenasi.png'),
+  getAssetPath('/assets/categoriesHistory/SiperSavaşi1917.png'),
+  getAssetPath('/assets/categoriesHistory/VahsiBatiSoygunu.png'),
+  getAssetPath('/assets/categoriesHistory/VikingBaskini.png'),
 
   // Hardcore
-  '/assets/categoriesHardcore/KorveSagir.png',
-  '/assets/categoriesHardcore/NukleerSiginak.png',
+  getAssetPath('/assets/categoriesHardcore/KorveSagir.png'),
+  getAssetPath('/assets/categoriesHardcore/NukleerSiginak.png'),
   '/assets/categoriesHardcore/OkyanusunOrtasi.png',
   '/assets/categoriesHardcore/ParasutsuzDusus.png',
   '/assets/categoriesHardcore/SuDoluMagara.png',

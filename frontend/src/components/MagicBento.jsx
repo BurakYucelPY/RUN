@@ -2,6 +2,7 @@ import { useRef, useEffect, useCallback, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ROUTES } from '../navigation/routes';
+import { getAssetPath } from '../utils/assets';
 import './MagicBento.css';
 
 const DEFAULT_PARTICLE_COUNT = 12;
@@ -15,7 +16,7 @@ const cardData = [
     title: 'Bilim Kurgu',
     description: 'Geleceğin teknolojisi ve uzay',
     label: 'Sci-Fi',
-    image: '/assets/categories/scifi.jpg',
+    image: getAssetPath('/assets/categories/scifi.jpg'),
     path: ROUTES.SCENARIO_SCIFI
   },
   {
@@ -23,7 +24,7 @@ const cardData = [
     title: 'Absürt & Komik',
     description: 'Gülmekten kaçamayacaksın',
     label: 'Komedi',
-    image: '/assets/categories/komik.jpg',
+    image: getAssetPath('/assets/categories/komik.jpg'),
     path: ROUTES.SCENARIO_COMEDY
   },
   {
@@ -31,7 +32,7 @@ const cardData = [
     title: 'Korku & Gerilim',
     description: 'Karanlıkta yalnız değilsin',
     label: 'Korku',
-    image: '/assets/categories/korku.jpg',
+    image: getAssetPath('/assets/categories/korku.jpg'),
     path: ROUTES.SCENARIO_HORROR
   },
   {
@@ -39,7 +40,7 @@ const cardData = [
     title: 'Tarih & Macera',
     description: 'Geçmişin tozlu sayfaları',
     label: 'Tarih',
-    image: '/assets/categories/tarih.jpg',
+    image: getAssetPath('/assets/categories/tarih.jpg'),
     path: ROUTES.SCENARIO_HISTORY
   },
   {
@@ -47,7 +48,7 @@ const cardData = [
     title: 'Hardcore',
     description: 'Zorlu hayatta kalma',
     label: 'Zor',
-    image: '/assets/categories/hard.jpg',
+    image: getAssetPath('/assets/categories/hard.jpg'),
     path: ROUTES.SCENARIO_HARDCORE
   },
   {
@@ -55,7 +56,7 @@ const cardData = [
     title: 'Fantastik',
     description: 'Büyülü dünyalar',
     label: 'Büyü',
-    image: '/assets/categories/fantastik.jpg',
+    image: getAssetPath('/assets/categories/fantastik.jpg'),
     path: ROUTES.SCENARIO_FANTASY
   }
 ];

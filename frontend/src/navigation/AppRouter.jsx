@@ -13,7 +13,7 @@ import Story from '../pages/Story/Story';
 
 const AppRouter = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/RUN">
       <Routes>
         <Route path={ROUTES.HOME} element={<Home />} />
         <Route path={ROUTES.CATEGORY_SELECTION} element={<CategorySelection />} />

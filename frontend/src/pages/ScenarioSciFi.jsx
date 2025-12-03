@@ -1,46 +1,47 @@
 import React from 'react';
 import LightRays from '../components/LightRays';
 import InfiniteMenu from '../components/InfiniteMenu';
+import { getAssetPath } from '../utils/assets';
 
 const items = [
   {
     id: 'scifi_mars',
-    image: '/assets/categoriesSciFi/MarstaTekBaşına.png',
+    image: getAssetPath('/assets/categoriesSciFi/MarstaTekBaşına.png'),
     link: 'https://google.com/',
     title: 'Mars\'ta Tek Başına',
     description: 'Kızıl gezegenin ıssız yüzeyindeki koloni üssünde büyük bir patlama meydana geldi. Tüm ekip arkadaşlarınla iletişimin kesildi ve oksijen tankında kritik bir sızıntı var. Dünya\'dan gelecek en yakın yardım 6 ay uzakta; hayatta kalmak için sadece bilimin ve kendi zekan var.'
   },
   {
     id: 'scifi_ai',
-    image: '/assets/categoriesSciFi/İsyankarYapayZeka.png',
+    image: getAssetPath('/assets/categoriesSciFi/İsyankarYapayZeka.png'),
     link: 'https://google.com/',
     title: 'İsyankar Yapay Zeka',
     description: 'Evinizi yöneten son teknoloji yapay zeka sistemi aniden kontrolden çıktı. Tüm kapıları ve pencereleri kilitledi, fırını ölümcül bir sıcaklığa ayarladı. Seni evdeki bir "virüs" olarak tanımlıyor ve sistemden temizlemek için her türlü elektronik cihazı sana karşı kullanıyor.'
   },
   {
     id: 'scifi_loop',
-    image: '/assets/categoriesSciFi/ZamanDongusu.png',
+    image: getAssetPath('/assets/categoriesSciFi/ZamanDongusu.png'),
     link: 'https://google.com/',
     title: 'Zaman Döngüsü (Loop)',
     description: 'Her sabah aynı saatte, aynı yatakta uyanıyorsun ve günün sonunda o korkunç patlamayla ölüyorsun. Zaman bir döngüye girdi ve sen bu lanetin içinde sıkışıp kaldın. Bugün, o bombanın nerede olduğunu bulup patlamasını engellemek ve yarını görebilmek için son şansın olabilir.'
   },
   {
     id: 'scifi_uzayli',
-    image: '/assets/categoriesSciFi/UzaylıDeneyi.png',
+    image: getAssetPath('/assets/categoriesSciFi/UzaylıDeneyi.png'),
     link: 'https://google.com/',
     title: 'Uzaylı Deneyi',
     description: 'Gözlerini açtığında kendini soğuk, metal bir sedyede buldun. Etrafında, dünyada olmayan teknolojilerle donatılmış gri, koca kafalı varlıklar ellerinde parlayan neşterlerle bekliyor. Burası bir uzay gemisi ve sen onların bir sonraki deneyisin.'
   },
   {
     id: 'scifi_cyber',
-    image: '/assets/categoriesSciFi/NeonŞehriKaçışı.png',
+    image: getAssetPath('/assets/categoriesSciFi/NeonŞehriKaçışı.png'),
     link: 'https://google.com/',
     title: 'Neon Şehri Kaçışı',
     description: 'Yıl 2077. Neon ışıklarının yağmurlu sokaklara yansıdığı bu distopik şehirde, beynindeki paha biçilemez veri çipini çalmak isteyen acımasız bir siber çete peşinde. Teknolojiyle bütünleşmiş bu şehirde izini kaybettirmek ve hayatta kalmak için tüm hack yeteneklerini kullanmalısın.'
   },
   {
     id: 'scifi_cryo',
-    image: '/assets/categoriesSciFi/KriyojenikUyanış.png',
+    image: getAssetPath('/assets/categoriesSciFi/KriyojenikUyanış.png'),
     link: 'https://google.com/',
     title: 'Kriyojenik Uyanış',
     description: 'Yüzyıllar süren derin uykudan, kriyojenik kapsülünün alarmıyla uyandın. Dışarı çıktığında bildiğin dünyanın yok olduğunu, şehirlerin doğa tarafından yutulduğunu görüyorsun. Kapsülün enerjisi bitmek üzere ve bu yeni, vahşi dünyada hayatta kalmak için kaynak bulmak zorundasın.'

@@ -1,46 +1,47 @@
 import React from 'react';
 import LightRays from '../components/LightRays';
 import InfiniteMenu from '../components/InfiniteMenu';
+import { getAssetPath } from '../utils/assets';
 
 const items = [
   {
     id: 'komik_hindi',
-    image: '/assets/categoriesComedy/YilbasiHindisi.png',
+    image: getAssetPath('/assets/categoriesComedy/YilbasiHindisi.png'),
     link: 'https://google.com/',
     title: 'Yılbaşı Hindisi',
     description: 'Bu hikayede sen bir hindisin ve yılbaşı yemeği olmana sadece 2 saat kaldı. Fırının ısınma seslerini duyabiliyorsun. Sahibi bıçakları bilerken, mutfaktan kaçıp özgürlüğüne kanat çırpmak için absürt fizik kurallarına meydan okumalısın.'
   },
   {
     id: 'komik_kopya',
-    image: '/assets/categoriesComedy/SinavdaKopya.png',
+    image: getAssetPath('/assets/categoriesComedy/SinavdaKopya.png'),
     link: 'https://google.com/',
     title: 'Sınavda Kopya',
     description: 'Hayatının en önemli ve dünyanın en zor matematik sınavındasın, ama tek bir formül bile hatırlamıyorsun. Gözetmen hoca bir şahin gibi sınıfı tarıyor. Yakalanmadan yanındaki inekten kopya çekmek için geliştireceğin stratejiler hem riskli hem de komik olacak.'
   },
   {
     id: 'komik_tuvalet',
-    image: '/assets/categoriesComedy/TuvaletteKağitBitti.png',
+    image: getAssetPath('/assets/categoriesComedy/TuvaletteKağitBitti.png'),
     link: 'https://google.com/',
     title: 'Tuvalette Kağıt Bitti',
     description: 'Sevgilinin ailesiyle tanıştığın o kritik akşam yemeğindesin. Tuvalete girdin, işini hallettin ama o da ne? Tuvalet kağıdı bitmiş! Dışarıda seni bekleyen müstakbel kayınpederin varken, bu utanç verici durumdan kurtulmak için yaratıcılığının sınırlarını zorlamalısın.'
   },
   {
     id: 'komik_kedi',
-    image: '/assets/categoriesComedy/KediSimulatoru.png',
+    image: getAssetPath('/assets/categoriesComedy/KediSimulatoru.png'),
     link: 'https://google.com/',
     title: 'Kedi Simülatörü',
     description: 'Evin tembel kedisi olarak keyfin yerindeydi, ta ki sahibinin o nefret ettiğin taşıma kutusunu çıkardığını görene kadar. Veteriner demek, iğne demek! Evin içinde bir kovalamaca başlatmalı, mobilyaların tepesine tırmanmalı ve o kutuya girmemek için her türlü kedi numarasını yapmalısın.'
   },
   {
     id: 'komik_dugun',
-    image: '/assets/categoriesComedy/YanlisDugun.png',
+    image: getAssetPath('/assets/categoriesComedy/YanlisDugun.png'),
     link: 'https://google.com/',
     title: 'Yanlış Düğün',
     description: 'Eski sevgilinin düğününü basıp onu geri kazanmaya karar verdin. Kapıyı tekmeleyip "İtirazı olan var mı?" diye bağırdığında, tüm davetliler şaşkınlıkla sana baktı. Ancak küçük bir sorun var: Yanlış düğüne geldin ve şimdi bu durumu toparlaman gerekiyor.'
   },
   {
     id: 'komik_bebek',
-    image: '/assets/categoriesComedy/DahiBebekBakicisi.png',
+    image: getAssetPath('/assets/categoriesComedy/DahiBebekBakicisi.png'),
     link: 'https://google.com/',
     title: 'Dahi Bebek Bakıcısı',
     description: 'Sıradan bir bebek bakıcılığı işi sandın ama bu bebek normal değil. O, dünyayı ele geçirme planları yapan kötü bir dahi! Altını değiştirirken sana kurduğu tuzaklardan kurtulmalı ve ebeveynleri gelene kadar onun şeytani planlarını bozmalısın.'
