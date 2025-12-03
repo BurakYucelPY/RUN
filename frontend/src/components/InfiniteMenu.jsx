@@ -981,7 +981,7 @@ export default function InfiniteMenu({ items = [] }) {
     };
 
     try {
-      const response = await fetch('http://localhost:8000/oyun-baslat', {
+      const response = await fetch('https://run-backend-nbvr.onrender.com/oyun-baslat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
