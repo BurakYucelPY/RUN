@@ -28,7 +28,6 @@
   - Dinamik hikaye üretimi
   - 3D interaktif menüler
   - Kişiselleştirilmiş korku ve eşya entegrasyonu
-  - Atmosferik ses ve görsel efektler
 
 ## 🌐 Canlı Demo
 
@@ -181,6 +180,12 @@ RUN/
 3.  **AI İşleme:** Backend, bu prompt'u Google Gemini API'ye gönderir.
 4.  **JSON Yanıt:** Gemini, hikayeyi, seçenekleri ve oyun durumunu (devam/bitti) içeren yapılandırılmış bir JSON döndürür.
 5.  **Render:** Frontend, gelen JSON verisini işleyerek oyuncuya görsel bir arayüzde sunar.
+
+## 🎨 Özelleştirme
+
+- **Yeni Kategoriler Ekleme**: \`frontend/src/pages/Categories.jsx\` dosyasındaki kategori listesine yeni türler ekleyebilirsiniz.
+- **Görsel Değişiklik**: \`frontend/public/assets/\` klasörüne yeni görseller ekleyerek arka planları ve tema resimlerini değiştirebilirsiniz.
+- **Hikaye Ayarları**: \`ai_service.py\` dosyasındaki \`SYSTEM_PROMPT\` içeriğini düzenleyerek yapay zekanın anlatım tarzını, zorluk seviyesini veya kurallarını değiştirebilirsiniz.
 
 ## 🐛 Sorun Giderme
 
