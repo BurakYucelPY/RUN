@@ -37,6 +37,13 @@ export const useStoryLogic = (storyData) => {
     navigate(ROUTES.HOME);
   };
 
+  const handleRestart = () => {
+    setCurrentSceneIndex(0);
+    setShowResult(false);
+    setResultText('');
+    setGameStatus('PLAYING');
+  };
+
   return {
     currentScene,
     currentSceneIndex,
@@ -45,6 +52,7 @@ export const useStoryLogic = (storyData) => {
     gameStatus,
     handleOptionClick,
     handleNextScene,
-    handleGoHome
+    handleGoHome,
+    handleRestart
   };
 };

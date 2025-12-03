@@ -14,7 +14,8 @@ const Story = () => {
     gameStatus,
     handleOptionClick,
     handleNextScene,
-    handleGoHome
+    handleGoHome,
+    handleRestart
   } = useStoryLogic(storyData);
 
   if (!storyData || !storyData.sahneler) {
@@ -129,29 +130,55 @@ const Story = () => {
                   }}>
                     {gameStatus === 'WON' ? 'HAYATTA KALDIN' : 'ÖLDÜN'}
                   </h2>
-                  <button 
-                    onClick={handleGoHome}
-                    style={{ 
-                      padding: '15px 40px', 
-                      fontSize: '1.2rem', 
-                      cursor: 'pointer', 
-                      backgroundColor: 'transparent', 
-                      color: '#fff', 
-                      border: '1px solid #fff',
-                      fontFamily: "'Courier New', monospace",
-                      transition: 'all 0.3s'
-                    }}
-                    onMouseOver={(e) => {
-                      e.target.style.backgroundColor = '#fff';
-                      e.target.style.color = '#000';
-                    }}
-                    onMouseOut={(e) => {
-                      e.target.style.backgroundColor = 'transparent';
-                      e.target.style.color = '#fff';
-                    }}
-                  >
-                    [ ANA MENÜYE DÖN ]
-                  </button>
+                  <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
+                    <button 
+                      onClick={handleRestart}
+                      style={{ 
+                        padding: '15px 40px', 
+                        fontSize: '1.2rem', 
+                        cursor: 'pointer', 
+                        backgroundColor: '#8B0000', 
+                        color: '#fff', 
+                        border: '1px solid #ff0000',
+                        fontFamily: "'Courier New', monospace",
+                        transition: 'all 0.3s'
+                      }}
+                      onMouseOver={(e) => {
+                        e.target.style.backgroundColor = '#ff0000';
+                        e.target.style.boxShadow = '0 0 15px #ff0000';
+                      }}
+                      onMouseOut={(e) => {
+                        e.target.style.backgroundColor = '#8B0000';
+                        e.target.style.boxShadow = 'none';
+                      }}
+                    >
+                      [ BAŞTAN BAŞLA ]
+                    </button>
+
+                    <button 
+                      onClick={handleGoHome}
+                      style={{ 
+                        padding: '15px 40px', 
+                        fontSize: '1.2rem', 
+                        cursor: 'pointer', 
+                        backgroundColor: 'transparent', 
+                        color: '#fff', 
+                        border: '1px solid #fff',
+                        fontFamily: "'Courier New', monospace",
+                        transition: 'all 0.3s'
+                      }}
+                      onMouseOver={(e) => {
+                        e.target.style.backgroundColor = '#fff';
+                        e.target.style.color = '#000';
+                      }}
+                      onMouseOut={(e) => {
+                        e.target.style.backgroundColor = 'transparent';
+                        e.target.style.color = '#fff';
+                      }}
+                    >
+                      [ ANA MENÜYE DÖN ]
+                    </button>
+                  </div>
                 </div>
               )}
             </div>
