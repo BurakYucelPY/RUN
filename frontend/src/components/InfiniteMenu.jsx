@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { mat4, quat, vec2, vec3 } from 'gl-matrix';
 import { ROUTES } from '../navigation/routes';
+import Loader from './Loader';
 import './InfiniteMenu.css';
 
 const discVertShaderSource = `#version 300 es
@@ -1072,6 +1073,25 @@ export default function InfiniteMenu({ items = [] }) {
               <button className="modal-close-button" onClick={handleCloseModal}>X</button>
             </div>
           </div>
+        </div>
+      )}
+
+      {isLoading && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'rgba(0, 0, 0, 0.7)',
+          backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)',
+          zIndex: 9999,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}>
+          <Loader text="HİKAYE YAZILIYOR" />
         </div>
       )}
     </div>
