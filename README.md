@@ -11,7 +11,7 @@
     <img src="https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
   </a>
   <a href="https://deepmind.google/technologies/gemini/">
-    <img src="https://img.shields.io/badge/AI-Gemini%20Pro-8E75B2?style=for-the-badge&logo=google&logoColor=white" alt="Gemini AI" />
+    <img src="https://img.shields.io/badge/AI-Gemini%202.5%20Flash-8E75B2?style=for-the-badge&logo=google&logoColor=white" alt="Gemini AI" />
   </a>
 </p>
 
@@ -105,7 +105,7 @@ Her kararın bir bedeli vardır. Hikaye, oyuncunun seçimlerine göre zaferle ve
 |-----------|----------|
 | **FastAPI** | Yüksek performanslı Python web framework |
 | **Uvicorn** | ASGI sunucusu |
-| **Google Gemini API** | Hikaye ve mantık motoru (Gemini Pro) |
+| **Google Gemini API** | Hikaye ve mantık motoru (Gemini 2.5 Flash) |
 | **Pydantic** | Veri doğrulama ve modelleme |
 | **python-dotenv** | Çevre değişkenleri yönetimi |
 
@@ -181,6 +181,16 @@ RUN/
 3.  **AI İşleme:** Backend, bu prompt'u Google Gemini API'ye gönderir.
 4.  **JSON Yanıt:** Gemini, hikayeyi, seçenekleri ve oyun durumunu (devam/bitti) içeren yapılandırılmış bir JSON döndürür.
 5.  **Render:** Frontend, gelen JSON verisini işleyerek oyuncuya görsel bir arayüzde sunar.
+
+## 🐛 Sorun Giderme
+
+| Sorun | Çözüm |
+|-------|-------|
+| **Sunucu Yanıt Vermiyor** | Backend (Render) ücretsiz planda olduğu için 15 dk hareketsizlikten sonra uyku moduna geçer. İlk açılışta 1-2 dakika beklemeniz gerekebilir. |
+| **Hikaye Oluşturulamadı** | Google Gemini API kotanız dolmuş olabilir veya API anahtarınız \`.env\` dosyasında hatalı tanımlanmış olabilir. |
+| **Beyaz Ekran / 404 Hatası** | Sayfayı yenilediğinizde hata alıyorsanız \`HashRouter\` kullanıldığından emin olun. GitHub Pages SPA yönlendirmelerini desteklemez. |
+| **Resimler Yüklenmiyor** | \`public/assets\` klasör yolunun doğru olduğundan ve \`getAssetPath\` yardımcı fonksiyonunun kullanıldığından emin olun. |
+| **CORS Hatası** | Localhost veya canlı domain adresinizin backend \`main.py\` dosyasındaki \`CORSMiddleware\` ayarlarında izinli olduğundan emin olun. |
 
 ## 🎯 Gelecek Hedefleri
 
