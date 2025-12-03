@@ -9,6 +9,7 @@ const Story = () => {
   
   const {
     currentScene,
+    currentSceneIndex,
     showResult,
     resultText,
     gameStatus,
@@ -70,6 +71,30 @@ const Story = () => {
           }}>
             {storyData.oyun_adi}
           </h1>
+          
+          {/* Progress Dots */}
+          <div style={{ 
+            display: 'flex', 
+            justifyContent: 'center', 
+            gap: '15px', 
+            marginTop: '20px' 
+          }}>
+            {Array.from({ length: 10 }).map((_, index) => (
+              <div 
+                key={index}
+                style={{
+                  width: '12px',
+                  height: '12px',
+                  borderRadius: '50%',
+                  border: '2px solid #8B0000',
+                  backgroundColor: index <= currentSceneIndex ? '#ff0000' : 'transparent',
+                  boxShadow: index <= currentSceneIndex ? '0 0 10px #ff0000' : 'none',
+                  transition: 'all 0.5s ease',
+                  transform: index === currentSceneIndex ? 'scale(1.3)' : 'scale(1)'
+                }}
+              />
+            ))}
+          </div>
         </div>
 
         {showResult ? (

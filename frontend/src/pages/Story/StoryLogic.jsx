@@ -29,7 +29,10 @@ export const useStoryLogic = (storyData) => {
       setCurrentSceneIndex(prev => prev + 1);
       setShowResult(false);
     } else {
-      navigate(ROUTES.HOME);
+      // Oyun bitti, son sahnedeyiz
+      setGameStatus('WON');
+      setShowResult(true);
+      setResultText('Hikayenin sonuna ulaştın. Tebrikler!');
     }
   };
 
