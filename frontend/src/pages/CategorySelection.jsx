@@ -16,7 +16,7 @@ const CategorySelection = () => {
           direction="top"
           className="text-4xl mb-8 font-bold text-white"
           style={{
-            fontSize: '2.8rem',
+            fontSize: '2.2rem',
             fontWeight: '900',
             marginBottom: '1.0rem',
             color: '#e0e0e0',

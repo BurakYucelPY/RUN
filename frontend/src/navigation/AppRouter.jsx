@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { ROUTES } from './routes';
 import Home from '../pages/Home';
 import CategorySelection from '../pages/CategorySelection';
@@ -13,7 +13,7 @@ import Story from '../pages/Story/Story';
 
 const AppRouter = () => {
   return (
-    <BrowserRouter basename="/RUN">
+    <HashRouter>
       <Routes>
         <Route path={ROUTES.HOME} element={<Home />} />
         <Route path={ROUTES.CATEGORY_SELECTION} element={<CategorySelection />} />
@@ -25,7 +25,7 @@ const AppRouter = () => {
         <Route path={ROUTES.SCENARIO_FANTASY} element={<ScenarioFantasy />} />
         <Route path={ROUTES.STORY} element={<Story />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
