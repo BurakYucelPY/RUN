@@ -23,7 +23,7 @@
 
 - **Frontend**: React + React Router DOM + Three.js
 - **Backend**: FastAPI + Python
-- **AI Modeli**: Google Gemini Pro
+- **AI Modeli**: Google Gemini 2.5 Flash
 - **Özellikler**: 
   - Dinamik hikaye üretimi
   - 3D interaktif menüler
@@ -188,7 +188,7 @@ RUN/
 - [ ] Kullanıcıların kendi senaryolarını oluşturup paylaşabilmesi.
 - [ ] Skor tablosu ve başarımlar.
 - [ ] Çok oyunculu (Co-op) mod denemeleri.
-
+- [ ] Zorluk ayarı ve can barı.
 ---
 <p align="center">
   Made with ❤️ by <a href="https://github.com/BurakYucelPY">Burak Yücel</a>
