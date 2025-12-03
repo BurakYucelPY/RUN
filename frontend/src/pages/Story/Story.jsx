@@ -44,7 +44,18 @@ const Story = () => {
         />
       </div>
 
-      <div style={{ position: 'relative', zIndex: 1, width: '100%', height: '100%', display: 'flex', flexDirection: 'column', padding: '40px', boxSizing: 'border-box' }}>
+      <div style={{ 
+        position: 'relative', 
+        zIndex: 1, 
+        width: '100%', 
+        height: '100%', 
+        display: 'flex', 
+        flexDirection: 'column', 
+        padding: '40px', 
+        boxSizing: 'border-box',
+        overflowY: 'auto',
+        overflowX: 'hidden'
+      }}>
         
         {/* Header / Title */}
         <div style={{ textAlign: 'center', marginBottom: '30px' }}>
@@ -199,11 +210,12 @@ const Story = () => {
                 backdropFilter: 'blur(10px)',
                 WebkitBackdropFilter: 'blur(10px)',
                 padding: '40px', 
-                borderLeft: '5px solid #8B0000',
-                maxWidth: '1000px',
+                width: '90%',
+                maxWidth: '1400px',
                 position: 'relative',
                 boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-                border: '1px solid rgba(139, 0, 0, 0.3)'
+                border: '1px solid rgba(139, 0, 0, 0.3)',
+                borderLeft: '5px solid #8B0000'
               }}>
                 <p style={{  
                   fontSize: '1.4rem', 
