@@ -981,7 +981,12 @@ export default function InfiniteMenu({ items = [] }) {
     };
 
     try {
-      const response = await fetch('https://run-backend-nbvr.onrender.com/oyun-baslat', {
+      // Localhost kontrolü: Eğer yerel makinede çalışıyorsak local backend'e, değilse canlı sunucuya istek at.
+      const apiUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+        ? 'http://localhost:8000/oyun-baslat'
+        : 'https://run-backend-nbvr.onrender.com/oyun-baslat';
+
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -1083,14 +1088,39 @@ export default function InfiniteMenu({ items = [] }) {
           left: 0,
           width: '100%',
           height: '100%',
-          backgroundColor: 'rgba(0, 0, 0, 0.7)',
+          backgroundColor: 'rgba(0, 0, 0, 0.95)',
           backdropFilter: 'blur(10px)',
           WebkitBackdropFilter: 'blur(10px)',
           zIndex: 9999,
           display: 'flex',
+          flexDirection: 'column',
           justifyContent: 'center',
-          alignItems: 'center'
+          alignItems: 'center',
+          gap: '20px'
         }}>
+          <div style={{
+            maxWidth: '700px',
+            textAlign: 'center',
+            padding: '0 20px',
+            color: '#8B0000',
+            fontFamily: "'Courier New', Courier, monospace",
+            fontSize: '0.9rem',
+            letterSpacing: '2px',
+            textTransform: 'uppercase',
+            lineHeight: '1.8',
+            textShadow: '0 0 10px rgba(139, 0, 0, 0.3)',
+            animation: 'pulseText 2s ease-in-out infinite'
+          }}>
+            <p style={{ marginBottom: '15px' }}>
+              BACKEND SERVİSİ "COLD START" MODUNDA OLABİLİR.
+            </p>
+            <p>
+              ÜCRETSİZ BULUT ALTYAPISI NEDENİYLE SUNUCUNUN UYANMASI VE HİKAYENİN OLUŞTURULMASI UZUN SÜREBİLİR.
+            </p>
+            <p style={{ marginTop: '15px', fontSize: '0.8rem', opacity: 0.7 }}>
+              LÜTFEN SAYFAYI YENİLEMEDEN BEKLEYİNİZ.
+            </p>
+          </div>
           <Loader text="HİKAYE YAZILIYOR" />
         </div>
       )}
