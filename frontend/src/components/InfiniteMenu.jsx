@@ -995,7 +995,20 @@ export default function InfiniteMenu({ items = [] }) {
       });
 
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        let errorMessage = "Sunucu bağlantı hatası.";
+        try {
+            const errorData = await response.json();
+            if (response.status === 429) {
+                errorMessage = "⚠️ API KOTA SINIRI AŞILDI\n\nGoogle Gemini AI servisinin günlük ücretsiz kullanım limitim dolmuş :( . Lütfen daha sonra tekrar deneyiniz.";
+            } else if (response.status === 503) {
+                errorMessage = "⚠️ AI SERVİSİ MEŞGUL\n\nGoogle sunucuları şu an aşırı yoğun. Lütfen 1-2 dakika bekleyip tekrar deneyiniz.";
+            } else {
+                errorMessage = errorData.detail || "Bilinmeyen bir sunucu hatası.";
+            }
+        } catch (e) {
+            console.error("Hata detayı okunamadı:", e);
+        }
+        throw new Error(errorMessage);
       }
 
       const data = await response.json();
@@ -1003,7 +1016,7 @@ export default function InfiniteMenu({ items = [] }) {
       navigate(ROUTES.STORY, { state: { story: data } });
     } catch (error) {
       console.error('Error starting game:', error);
-      alert('Oyuna başlarken bir hata oluştu. Lütfen tekrar deneyin.');
+      alert(error.message);
     } finally {
       setIsLoading(false);
     }
