@@ -23,7 +23,7 @@ const Story = () => {
     return (
       <div style={{ width: '100%', height: '100vh', backgroundColor: '#000', color: '#fff', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <h1>Hikaye yüklenemedi...</h1>
-        <button onClick={handleGoHome} style={{ marginLeft: '20px', padding: '10px' }}>Ana Sayfa</button>
+        <button onClick={handleGoHome} style={{ marginLeft: '20px', padding: '10px' }}>Kategori Seçimi</button>
       </div>
     );
   }
@@ -212,7 +212,7 @@ const Story = () => {
                         e.target.style.color = '#fff';
                       }}
                     >
-                      [ ANA MENÜYE DÖN ]
+                      [ KATEGORİ SEÇİMİ ]
                     </button>
                   </div>
                 </div>

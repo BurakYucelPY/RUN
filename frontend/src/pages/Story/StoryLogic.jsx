@@ -37,7 +37,7 @@ export const useStoryLogic = (storyData) => {
   };
 
   const handleGoHome = () => {
-    navigate(ROUTES.HOME);
+    navigate(ROUTES.CATEGORY_SELECTION);
   };
 
   const handleRestart = () => {
